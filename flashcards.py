@@ -4,6 +4,8 @@ import os
 import random
 import time
 
+print("Initializaing....")
+time.sleep(0.5)
 
 def chapter_select(chapter):
     """
@@ -58,9 +60,16 @@ def query_dict(dictionary, topics, entry):
     time.sleep(2)
     print(dictionary[topics[entry]])
 
-randomInt = random.randint(0,20)
+
+
+
 dictionary = read_chapter(int(input("Please enter a chapter number: ")))
+termsInDict = len(dictionary.keys())
+print("There are " + str(termsInDict) + " entries in this chapter.")
+time.sleep(2)
+
 topics = list(dictionary.keys())
+randomInt = random.randint(0, termsInDict)
 
 query_dict(dictionary, topics, randomInt)
     
